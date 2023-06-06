@@ -80,7 +80,7 @@ function createSection({ title, description, image, items }) {
   _desc.className = "description"
   _desc.innerHTML = image ? `
     <div class="image-wrapper">
-      <img src="/media/${image}" alt="${title}" />
+      <img src="/d41d8cd98f00b204e9800998ecf8427e/media/${image}" alt="${title}" />
     </div> ` : "" + `
     <p>${description ?? ""}</p>
   `
