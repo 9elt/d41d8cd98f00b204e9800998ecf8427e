@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "npx http-server -o ./dist",
+    "update": "bash ./scripts/update-data",
     "bundle": "rm -rf dist/* && npx webpack"
   },
   "devDependencies": {

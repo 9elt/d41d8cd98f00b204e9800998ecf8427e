@@ -31,17 +31,33 @@ def csv_to_json(file):
             f.write(json.dumps({ "sections": data }))
             f.truncate()
 
-with open("menu.json", 'w') as f:
+with open("./scripts/.output/it-menu.json", 'w') as f:
     f.seek(0)
     f.write(json.dumps({
         "menus": [
             {
                 "title": "Cibo",
-                "sections": csv_to_json("food.csv")
+                "sections": csv_to_json("./data/it-food.csv")
             },
             {
                 "title": "Bevande",
-                "sections": csv_to_json("drinks.csv")
+                "sections": csv_to_json("./data/it-drinks.csv")
+            },
+        ]
+    }))
+    f.truncate()
+
+with open("./scripts/.output/en-menu.json", 'w') as f:
+    f.seek(0)
+    f.write(json.dumps({
+        "menus": [
+            {
+                "title": "Food",
+                "sections": csv_to_json("./data/en-food.csv")
+            },
+            {
+                "title": "Drinks",
+                "sections": csv_to_json("./data/en-drinks.csv")
             },
         ]
     }))
