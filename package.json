@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "npx http-server -o ./dist",
     "update": "bash ./scripts/update-data",
-    "bundle": "rm -rf dist/* && npx webpack"
+    "build": "npm run update && rm -rf dist/* && npx webpack"
   },
   "devDependencies": {
     "css-loader": "^6.8.1",
