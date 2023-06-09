@@ -1,3 +1,11 @@
+function importAll(r) {
+  let d = {};
+  r.keys().map((item, index) => { d[item.replace('./', '')] = r(item); });
+  return d;
+}
+
+const IMAGES = importAll(require.context('../media', false, /\.(png|jpe?g|svg)$/));
+
 import { it_data  } from "./data/it.js"
 import { en_data  } from "./data/en.js"
 
@@ -10,6 +18,7 @@ let data = full_data[LOCALE]
 function main() {
   initLocaleSwitches()
   initLocale(handleLocaleChange)
+  setTimeout(() => document.querySelector(".loader").remove(), 450)
 }
 
 function handleLocaleChange() {
@@ -80,7 +89,7 @@ function createSection({ title, description, image, items }) {
   _desc.className = "description"
   _desc.innerHTML = image ? `
     <div class="image-wrapper">
-      <img src="/d41d8cd98f00b204e9800998ecf8427e/media/${image}" alt="${title}" />
+      <img src="" alt="${title}" />
     </div> ` : "" + `
     <p>${description ?? ""}</p>
   `
@@ -92,12 +101,16 @@ function createSection({ title, description, image, items }) {
       s.classList.remove("active")
     })
 
+    if (image) {
+      _desc.querySelector("img").src = IMAGES[image]
+    }
+
     if (!is_active) {
       _wrapper.classList.add("active")
     }
 
     // setTimeout(() => {
-    //   _wrapper.scrollIntoView({ behavior: "smooth" })
+    //   window.scrollTo({ top: _wrapper.getBoundingClientRect().y + 200, behavior: "smooth" })
     // }, 150)
   })
 

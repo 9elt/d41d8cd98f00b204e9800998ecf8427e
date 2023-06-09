@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(/d41d8cd98f00b204e9800998ecf8427e/media/background.jpg);
+    background-image: url(../media/background.jpg);
     background-size: cover;
     -webkit-filter: blur(4px) opacity(0.7) saturate(1.8);
     filter: blur(4px) opacity(0.7) saturate(1.8);
@@ -219,7 +219,6 @@ footer {
 .image-wrapper {
     max-width: 100%;
     max-height: 12rem;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
