@@ -113,6 +113,19 @@ header {
     margin-block: 0.5rem;
 }
 
+.loader img.logo {
+    width: 15rem;
+}
+
+header img.logo {
+    width: 6rem
+}
+
+footer img.logo {
+    width: 10rem;
+    margin-top: 1rem;
+}
+
 /*
  *
  *
@@ -144,11 +157,11 @@ footer {
     font-size: 80%;
 }
 
-#footer-wrapper div {
+/* #footer-wrapper div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+} */
 
 #social-links svg {
     fill: #fff;
