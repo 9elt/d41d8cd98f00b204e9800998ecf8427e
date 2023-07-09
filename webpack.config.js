@@ -7,7 +7,7 @@ module.exports = {
     styles: "./src/css/main.css"
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './menu'),
     filename: '[name].js',
   },
   plugins: [

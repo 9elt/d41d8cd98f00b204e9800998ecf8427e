@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npx http-server -o ./dist",
+    "dev": "npx http-server -o ./menu",
     "update": "bash ./scripts/update-data",
-    "build": "npm run update && rm -rf dist/* && npx webpack"
+    "build": "npm run update && rm -rf menu/* && npx webpack"
   },
   "devDependencies": {
     "css-loader": "^6.8.1",
